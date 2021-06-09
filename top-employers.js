@@ -39,7 +39,7 @@ if(article.getElementsByTagName("h3")[0].innerText == "Private Employers:"){
 		else {employees = employees.innerText;}
 
 		// Build Wikipedia markdown for table row and append to results variable
-		results += "\n|-\n|" + employer + "\n|" + employees;
+		results += "\n|-\n|" + employer + "\n| align=right | " + employees;
 	}
 
 	// Append closing markdown for first table to results variable
@@ -71,7 +71,7 @@ if(article.getElementsByTagName("h3")[1].innerText == "Public Employers:"){
 		else {employees = employees.innerText;}
 
 		// Build Wikipedia markdown for table row and append to results variable
-		results += "\n|-\n|" + employer + "\n|" + employees;
+		results += "\n|-\n|" + employer + "\n| align=right | " + employees;
 	}
 
 	// Append closing markdown for second table to results variable along with text about bold values
