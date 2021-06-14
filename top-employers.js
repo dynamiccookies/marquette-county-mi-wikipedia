@@ -7,11 +7,14 @@ var private, public, results, row;
 // Declare and set variable with today's date formatted as: January 1, 2021
 var today = new Date().toLocaleDateString("en-us",{year:'numeric',month:'long',day:'numeric'})
 
+// Declare and set variable with current year
+var year = new Date().toLocaleDateString("en-us",{year:'numeric'})
+
 // Declare results string variable and store header, date, and descriptive sentence with reference
 results = "===Top employers===\n<!-- Please use the script referenced on the talk page to update these tables -->\n" + 
 	"''Last updated " + today + ".''\n\n" + 
 	"According to the Lake Superior Community Partnership website,<ref>{{cite web |url=https://marquette.org/principal-employers/ |title=" + 
-	article.getElementsByTagName("h1")[0].innerText + " |website=Lake Superior Community Partnership |access-date=" + today + 
+	article.getElementsByTagName("h1")[0].innerText + " |publisher=Lake Superior Community Partnership |access-date=" + today + 
 	"}}</ref> the top employers in the county are:\n\n";
 
 // Test if first h3 header is Private Employers
@@ -75,7 +78,7 @@ if(article.getElementsByTagName("h3")[1].innerText == "Public Employers:"){
 	}
 
 	// Append closing markdown for second table to results variable along with text about bold values
-	results += "\n|}\n|}\n<nowiki>*</nowiki>Bolded values have been updated for the current year.";
+	results += "\n|}\n|}\n<nowiki>*</nowiki>Bolded values have been updated for " + year + ".";
 }
 
 // Push results variable contents to console
